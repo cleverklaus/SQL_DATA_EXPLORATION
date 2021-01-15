@@ -53,16 +53,49 @@ UPDATE INSTRUCTOR SET city = 'Markham' where  ins_id = 1;
 DELETE from INSTRUCTOR where ins_id=2;				     
 				     
 				     
+--STRING PATTERNS, RANGES, SORTING AND GROUPING, HEEEEEEEEEEEEEEEEEEEEEEEEEEREEEEEEEEEEEEEEEEEEEE--	
+--USING WHERE CLAUSE--				     
+			select firstname from AUTHOR 
+			where firstname 'R%'
+				     
+--USING between OPERATOR--			
+			select title, pages from BOOK
+			where pages between 290 and 300;	     
 				     
 				     
+--USING IN OPERATOR--	
+				     
+			select firstname, lastname, country from AUTHOR
+				     where country IN ('AU', 'CA')
+				     
+--SORTING RESULT SET--
+				     
+			select title from BOOK
+			order by title;
+				     
+			select title from BOOK
+			order by title DESC;
+
+--THIS DISPLAYS THE RESULTS ORDERED BY THE NUMBER OF PAGES EVERY TWO PAGES IN ASCENDING ORDER--				     
+			select title, pages from BOOK
+			order by 2;	     
 				     
 				     
+--ELIMINATING DUPLICATES DISTINCT CLAUSE--
+				     
+			select distinct(country) from AUTHOR;
+				     
+--GROUP BY--				     
+			select country count(country)
+			from AUTHOR group by country;
 				     
 				     
+--HAVING CLAUSE, USED IN COMBINATION WIHT GROUP BY CLAUSE--				     
 				     
-				     
-				     
-				     
+			select country count(country)
+			as Count from AUTHOR
+			group by country
+			having count(country) > 4;	     
 				     
 				     
 				     
