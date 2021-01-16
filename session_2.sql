@@ -1,0 +1,5 @@
+--BUILT IN FUNCTIONS--
+
+--SUM FUNCTION--
+
+select sum(COST) from PETRESCUE
